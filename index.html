@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Justiphile</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f1f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#121317]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#121317] text-lg font-bold leading-tight tracking-[-0.015em]">Justiphile</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#121317] text-sm font-medium leading-normal" href="#"><b>Home</b></a>
+              <a class="text-[#121317] text-sm font-medium leading-normal" href="pages/expert.html">Contact Expert</a>
+              <a class="text-[#121317] text-sm font-medium leading-normal" href="pages/resources.html">Resources</a>
+              <a class="text-[#121317] text-sm font-medium leading-normal" href="pages/about.html">About Us</a>
+            </div>
+           
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("all_images/lawimage.jpg");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Understand Your Legal Standing
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Ever wondered what rights you have in a legal situation?
+                      JustiChat is built to help everyday people understand the laws that affect them. Whether you're a victim, a witness, or just curious, we provide clear, simplified insights into legal concepts, charges, and your rights.
+                    </h2>
+                  </div>
+                  <label class="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
+                    <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                      <div
+                        class="text-[#666c85] flex border border-[#dcdee4] bg-white items-center justify-center pl-[15px] rounded-l-xl border-r-0"
+                        data-icon="MagnifyingGlass"
+                        data-size="20px"
+                        data-weight="regular"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                            d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <input
+                        placeholder=" Get instant answers to your legal questions about Indian law, potential crimes, victim's rights, and more."
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121317] focus:outline-0 focus:ring-0 border border-[#dcdee4] bg-white focus:border-[#dcdee4] h-full placeholder:text-[#666c85] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
+                        value=""
+                      />
+                      <div class="flex items-center justify-center rounded-r-xl border-l-0 border border-[#dcdee4] bg-white pr-[7px]">
+                       <button
+                onclick="window.location.href='gemini.html';"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e9ecfa] text-[#121317] text-sm font-medium leading-normal"
+                >
+                  <span class="truncate">Get Information</span>
+                </button>
+                        </button>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Common Crimes &amp; Punishments</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_00037_186045_1523266765688&orderno=436" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("/all_images/theft.jpg");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Theft</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">
+                    Penalties for theft, ranging from fines to imprisonment, depending on the value of the stolen property.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_00037_186045_1523266765688&orderno=392" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwTw34PNiCIhOEpcQlLSZlmZLvS_A_W0_P09fVV2PYalchXeC-v96Yq01yCTnaEQM19BZuPeKGVRsfHoI1uityt6wZoJXnFQNL9baBEATE-rvrPjW7QRsO6c4fTxluhM3s60gnt5eYVO98Vh24pM-Hm6phrOVQloKkgV0I4eTv7CUK4wRXqhpXiY0Me9H9HQkfso19n8aaYToUALLVqXAJjRVqI35zdLyvmDeBPzsuEJVwm4wAB585DNX8VQNviClHlFH5MAAIQ7k1");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Assault</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">
+                    Punishments for assault, varying from minor penalties to significant jail time based on the severity of the injury.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_22_29_00008_201318_1517807327856&sectionId=49342&sectionno=447&orderno=503" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkMhhcWbe9V8BpmuxgHxJwSjLmdJdMbhf_cdK9aoix5iJ_eeJ585cXsOVlkCBy21cblB91vHLjYQSHg3K6msPz2nr6Fylcdk5cTAOQLmmiDoPHh35CiH2jFlMmp3TC2_RsQVfF8vsNrj7Tu2SamRpiuzcnfU-sRF4RK86W1Q0rPAa4Lu3C9Vmfpxg9X2Tr8dQqzwqFWZHklksqXQvwCzDGO6R_dhXcBlZ-ydhT5fATvQtIbmRLA1Sen_ip6MSy61-mynlj0lGih05C");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Fraud</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Consequences for fraudulent activities, including fines, restitution, and potential imprisonment.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://cybercrime.gov.in/webform/crimecatdes.aspx" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("all_images/cybercrime.jpg");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Cybercrime</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Legal repercussions for cybercrimes, such as hacking, online fraud, and data breaches.</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Victim's Rights &amp; Accusations</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://csic.org.in/how-to-report-a-case/" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4Njr9_QsLzVcdSViFbBNMsgq5b23jd0LIH73ojAf5TffxU3ZjpO8dMOXDP2TVfyW5CJhrohVK7EHOWp-1MhPVPuL2d4lvZXHSygkEKt9Zev95BwqexmoD-OuPfQDp1ydfrJA2l6lVSVzA_VJalc6j2ATF3c6DyXCY73OvDrw4WIUcGX_xX0LbzccAlO6q3LJTG0SR0kmvVrPI1y_Xte3el62nwiAHGolAL7yDulGO6DAlTfhEyxGU-2torYOIp3dp-npbB5DiqrZe");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Reporting a Crime</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Steps to report a crime to the authorities and initiate legal proceedings.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://nalsa.gov.in/victim-compensation/" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqmqPUISdl7cyaZ17-YLhzB3WC5sa9hXup5i7hvLpj_-X3uH0rx-TPtvjxLraKq49BuUPfYVeoFvdrlvycOnsiTPGVDYEej949x1o4RpmIS-buJ-VZdkEIcqmzxYDbwbRv3dnR6dxXpCtPpgpxyRtBLPGa3nQJGL9TtlqojEHErJMTAOexZfLAwy1e5kFq6Jeiy-QgOPmyJNYopLc0lb46qZtPXO-ZQrF-rftXDhAEqHiHIFURwhfqbbgHgA_5g8gyIA6pHfq66B9x");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Seeking Compensation</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Options for victims to seek financial compensation for damages or losses.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <a href="https://www.myadvo.in/blog/complete-guide-on-how-to-obtain-a-restraining-order-in-india/" >
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("/all_images/protection_order.jpg");'
+                ></div>
+                </a>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Protection Orders</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Understanding protection orders and how they can safeguard victims from further harm.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAM1t0_58dGUmFOQHj7Vz71MKjY7Sx9ZHGHLDf-Fn6o8Gdc07541dfm4_MswJfZslOEC6lMq1Vek5fO5_JcHqpo53yp0MJI2Thu72FlJd_mBmjS_KD4yPLMcYEdKEvsouDJmeoQ1NUm5M6wNgQ5ea19SM6Zl_H8kNqpnck9VnI0bEJTyR4khPdrbJKsk5ntRrkCUTZd0UOoaLYHhnT7rPU4UGOoUfhftjorB7w9GzxcIwxiSfShe06HNTiLD6EPDGghOmf0EZtRX8kr");'
+                ></div>
+                <div>
+                  <p class="text-[#121317] text-base font-medium leading-normal">Legal Assistance</p>
+                  <p class="text-[#666c85] text-sm font-normal leading-normal">Resources and support available for victims seeking legal advice and representation.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end overflow-hidden px-5 pb-5">
+              <button
+               
+              >
+                <div class="text-[#121317]" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
+                  
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Have Questions?</h2>
+            <div class="p-4 @container">
+              <div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-[#dcdee4] bg-white p-5 @[480px]:flex-row @[480px]:items-center">
+                <div class="flex flex-col gap-1">
+                  <p class="text-[#121317] text-base font-bold leading-tight">Chat with our Legal Assistant</p>
+                  <p class="text-[#666c85] text-base font-normal leading-normal">
+                    Get instant answers to your legal questions about Indian law, potential crimes, victim's rights, and more.
+                  </p>
+                </div>
+                <button
+                onclick="window.location.href='gemini.html';"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e9ecfa] text-[#121317] text-sm font-medium leading-normal"
+                >
+                  <span class="truncate">Start Chat</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#666c85] text-base font-normal leading-normal min-w-40" href="#">About Us</a>
+                <a class="text-[#666c85] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#666c85] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#666c85] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#666c85] text-base font-normal leading-normal">@2025 Justiphile. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

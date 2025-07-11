@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JustiChat – Legal Assistant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for general text, Merriweather for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Custom styles for the chat bubble alignment */
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Space between messages */
+        }
+        .message {
+            margin-bottom: 1rem; /* Space between messages */
+            padding: 1rem 1.25rem; /* Padding inside message bubble */
+            border-radius: 0.625rem; /* 10px rounded corners */
+            max-width: 80%; /* Max width for message bubbles */
+            font-size: 0.9375rem; /* 15px font size */
+            line-height: 1.6;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for bubbles */
+        }
+        .bot {
+            background-color: #f1f5fb; /* Light blue-gray background */
+            border-left: 4px solid #284674; /* Darker blue border on left */
+            align-self: flex-start; /* Align bot messages to the left */
+            margin-right: auto; /* Push to left */
+        }
+        .user {
+            background-color: #d7ecff; /* Lighter blue background */
+            border-right: 4px solid #0a3264; /* Darker blue border on right */
+            align-self: flex-end; /* Align user messages to the right */
+            margin-left: auto; /* Push to right */
+        }
+        /* Custom scrollbar for chat window */
+        .chat-window::-webkit-scrollbar {
+            width: 8px;
+        }
+        .chat-window::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .chat-window::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .chat-window::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Keyframes for simple button hover effect */
+        @keyframes button-hover-bubble {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .button-hover-effect:hover {
+            animation: button-hover-bubble 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-inter">
+
+    <!-- Header Section -->
+    <header class="bg-blue-900 text-white p-6 text-center shadow-lg rounded-b-xl">
+        <h1 class="text-3xl font-merriweather font-bold tracking-wide">JustiChat – Your Legal Assistant</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-3xl bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col h-[70vh] md:h-[80vh]">
+            <!-- Chat Window -->
+            <div id="chat" class="flex-1 p-6 overflow-y-auto message-container">
+                <div class="message bot">
+                    <strong>JustiChat:</strong> Welcome. How can I assist with your legal query today?
+                </div>
+                <!-- Messages will be appended here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-6 border-t border-gray-200 bg-gray-50 flex items-center gap-3 rounded-b-xl">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask about a law, penalty, or legal term..."
+                    class="flex-1 p-3 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 font-inter shadow-sm"
+                />
+                <button
+                    onclick="sendMessage()"
+                    class="button-hover-effect bg-gradient-to-r from-blue-700 to-blue-900 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform active:scale-95"
+                >
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="text-sm text-gray-600 text-center mt-6 p-2 rounded-lg bg-gray-100 shadow-sm">
+            ⚖️ This tool is for informational purposes only and does not constitute legal advice.
+        </div>
+    </main>
+
+    <script>
+        // Get references to DOM elements
+        const userInput = document.getElementById("userInput");
+        const chatWindow = document.getElementById("chat");
+        let isSending = false; // Flag to prevent multiple concurrent requests
+
+        // Function to scroll chat to the bottom
+        function scrollToBottom() {
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        // Function to add a message to the chat window
+        function addMessage(sender, text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+            messageDiv.innerHTML = `<strong>${sender === 'user' ? 'You' : 'JustiChat'}:</strong> ${text}`;
+            chatWindow.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Main function to send a message
+        async function sendMessage() {
+            const message = userInput.value.trim();
+
+            if (!message || isSending) {
+                return; // Don't send empty messages or if a request is already in progress
+            }
+
+            isSending = true; // Set flag to true
+            addMessage('user', message); // Add user message to chat
+            userInput.value = ''; // Clear input field
+
+            // Add a temporary "typing" message from the bot
+            const typingMessageId = 'typing-message';
+            const typingDiv = document.createElement('div');
+            typingDiv.id = typingMessageId;
+            typingDiv.classList.add('message', 'bot');
+            typingDiv.innerHTML = '<strong>JustiChat:</strong> Thinking...';
+            chatWindow.appendChild(typingDiv);
+            scrollToBottom();
+
+            try {
+                console.log("Attempting to fetch from http://localhost:3000/gemini with message:", message); // Debugging log
+                const response = await fetch("http://localhost:3000/gemini", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: message }),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.response || `HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                // Remove the "typing" message before adding the actual response
+                const existingTypingMessage = document.getElementById(typingMessageId);
+                if (existingTypingMessage) {
+                    chatWindow.removeChild(existingTypingMessage);
+                }
+                addMessage('bot', data.response); // Add bot's response
+            } catch (error) {
+                console.error("Error sending message:", error);
+                // Remove the "typing" message if an error occurred
+                const existingTypingMessage = document.getElementById(typingMessageId);
+                if (existingTypingMessage) {
+                    chatWindow.removeChild(existingTypingMessage);
+                }
+                // Provide a more informative error message to the user
+                addMessage('bot', `❌ Error getting response from server: ${error.message}. Please ensure your backend server is running at http://localhost:3000 and try again.`);
+            } finally {
+                isSending = false; // Reset flag
+            }
+        }
+
+        // Event listener for the Enter key
+        userInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initial scroll to bottom in case of pre-filled messages
+        window.onload = scrollToBottom;
+    </script>
+</body>
+</html>
