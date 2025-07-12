@@ -1,9 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/gemini.js", "use": "@vercel/node" }
+    { "src": "gemini.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/gemini", "methods": ["POST"], "dest": "/api/gemini.js" }
+    { "src": "/gemini", "methods": ["POST"], "dest": "/api/gemini.js" }
   ]
 }
