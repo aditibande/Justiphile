@@ -147,7 +147,7 @@
 
             try {
                 console.log("Attempting to fetch from http://localhost:3000/gemini with message:", message); // Debugging log
-                const response = fetch("/api/gemini", {...})
+                const response = fetch("gemini", {...})
                  , {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
