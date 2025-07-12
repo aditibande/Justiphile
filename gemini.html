@@ -147,11 +147,12 @@
 
             try {
                 console.log("Attempting to fetch from http://localhost:3000/gemini with message:", message); // Debugging log
-                const response = await fetch("http://localhost:3000/gemini", {
+                const response = fetch("/api/gemini", {...})
+                 , {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message: message }),
-                });
+                };
 
                 if (!response.ok) {
                     const errorData = await response.json();
