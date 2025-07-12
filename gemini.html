@@ -147,7 +147,7 @@
 
             try {
                 console.log("Attempting to fetch from http://localhost:3000/gemini with message:", message); // Debugging log
-                const response = await fetch("https://justiphile.onrender.com", {
+                const response = await fetch("https://justiphile.onrender.com/gemini", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message: message }),
@@ -173,7 +173,7 @@
                     chatWindow.removeChild(existingTypingMessage);
                 }
                 // Provide a more informative error message to the user
-                addMessage('bot', `❌ Error getting response from server: ${error.message}. Please ensure your backend server is running at http://localhost:3000 and try again.`);
+                addMessage('bot', `❌ Error getting response from server: ${error.message}. Please try again later or check if server is live.`);
             } finally {
                 isSending = false; // Reset flag
             }
